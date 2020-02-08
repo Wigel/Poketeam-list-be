@@ -1,24 +1,32 @@
 version: "2"
 services:
   mysql:
-    image: mysql:latest
-    container_name: mysql
-    environment:
-      MYSQL_USER: user
-      MYSQL_PASSWORD: user
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: poketeam
-    volumes:
-      - ./database:/var/lib/mysql
-  phpmyadmin:
-    image: phpmyadmin/phpmyadmin
-    container_name: phpmyadmin
-    environment:
-      - PMA_HOST=mysql
-    restart: always
+    image: mysql:5.7
     ports:
-      - 8081:80
+      - 3306:3306
     volumes:
-      - /sessions
+      - mysql:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: my
+      MYSQL_USER: my
+      MYSQL_PASSWORD: my
+    command: >
+      --character-set-server=utf8mb4
+      --collation-server=utf8mb4_unicode_ci
+  phpmyadmin:
+    depends_on:
+      - mysql
     links:
       - mysql
+    image: phpmyadmin/phpmyadmin:latest
+    ports:
+      - 13306:80
+    environment:
+      PMA_ARBITRARY: 1
+      PMA_HOST: mysql
+      PMA_USER: root
+      PMA_PASSWORD: root
+volumes:
+  mysql:
+    driver: local

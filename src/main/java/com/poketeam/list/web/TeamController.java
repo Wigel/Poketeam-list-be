@@ -14,8 +14,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class TeamController {
     @Autowired
     SaveTeamService saveTeamService;
+
     @PostMapping
-    public ResponseEntity saveTeam(@RequestBody TeamForm teamForm){
+    public ResponseEntity saveTeam(@RequestBody TeamForm teamForm) {
         saveTeamService.saveTeam(teamForm);
         return new ResponseEntity(HttpStatus.OK);
     }

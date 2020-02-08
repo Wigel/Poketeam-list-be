@@ -16,7 +16,7 @@ public class PokemonController {
     GetPokemonService getPokemonService;
 
     @GetMapping
-    private ResponseEntity getAllPokemon(){
+    private ResponseEntity getAllPokemon() {
         PokemonResponseDto pokemonResponseDto = getPokemonService.getAllPokemon();
 
         return new ResponseEntity(pokemonResponseDto, null, HttpStatus.OK);

@@ -1,14 +1,11 @@
 package com.poketeam.list.service.dto;
 
 import com.poketeam.list.data.dto.PokemonSwordAndShieldDto;
-import com.poketeam.list.domain.Pokemon;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
+import lombok.Data;
 
 import java.util.List;
 
-@AllArgsConstructor
-@NoArgsConstructor
+@Data
 public class PokemonResponseDto {
-    private List<PokemonSwordAndShieldDto> pokemon;
+    private List<PokemonSwordAndShieldDto> pokemons;
 }

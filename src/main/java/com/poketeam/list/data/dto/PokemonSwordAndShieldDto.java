@@ -1,7 +1,6 @@
 package com.poketeam.list.data.dto;
 
 import javax.persistence.*;
-import java.awt.*;
 
 @Entity
 @Table(name = "pokemon_sword_and_shield")

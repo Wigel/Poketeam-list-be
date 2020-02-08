@@ -2,10 +2,7 @@ package com.poketeam.list.service;
 
 import com.poketeam.list.data.dao.PokemonSwordAndShieldDao;
 import com.poketeam.list.data.dto.PokemonSwordAndShieldDto;
-import com.poketeam.list.domain.Pokemon;
 import com.poketeam.list.service.dto.PokemonResponseDto;
-import lombok.Data;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +12,8 @@ import java.util.List;
 public class GetPokemonService {
     @Autowired
     PokemonSwordAndShieldDao pokemonSwordAndShieldDao;
-    public PokemonResponseDto getAllPokemon(){
+
+    public PokemonResponseDto getAllPokemon() {
 
         //Return all pokemon from db
         List<PokemonSwordAndShieldDto> pokemonSwordAndShieldDtoList = pokemonSwordAndShieldDao.findAll();

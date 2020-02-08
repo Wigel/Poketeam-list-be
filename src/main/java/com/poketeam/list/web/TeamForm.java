@@ -10,10 +10,13 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class TeamForm {
-    @NonNull private Long id;
-    @NonNull private String userId;
+    @NonNull
+    private Long id;
+    @NonNull
+    private String userId;
     private String name;
-    @NonNull private List<Integer> pokemonList;
+    @NonNull
+    private List<Integer> pokemonList;
 
     // TODO Add toInput method (Object to use in Service layer)
     public TeamDto toDto() {
@@ -25,12 +28,12 @@ public class TeamForm {
         Integer pokemon5 = null;
         Integer pokemon6 = null;
 
-        if (!this.name.isEmpty()){
+        if (!this.name.isEmpty()) {
             name = this.name;
         }
 
         Integer index = 1;
-        for (Integer pokemonId :  this.pokemonList){
+        for (Integer pokemonId : this.pokemonList) {
             switch (index) {
                 case 2:
                     pokemon2 = pokemonId;
