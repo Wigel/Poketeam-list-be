@@ -20,6 +20,7 @@ build/
 *.iml
 *.ipr
 out/
+/database/
 
 ### NetBeans ###
 /nbproject/private/
